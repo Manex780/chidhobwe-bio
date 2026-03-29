@@ -15,6 +15,94 @@
     <div id="root">
         <h1>Chidhobwe's Biography</h1>
         <p>Welcome to my official page.</p>
+        const AboutSection = () => {
+  const timeline = [
+    { year: "ECD–Gr4", title: "Makombe Primary School", desc: "Started his educational journey at Makombe Primary in Beitbridge, laying a strong academic foundation from ECD through Grade 4." },
+    { year: "Gr5+", title: "Transferred to Masvingo", desc: "Moved to Masvingo and continued studies at Shakashe Primary School, adapting to a new environment with resilience and enthusiasm." },
+    { year: "Form 1–4", title: "Ndarama High School", desc: "Completed his O-Level education at Ndarama High School, growing academically and discovering his passion for sports, arts, and technology." },
+    { year: "Now", title: "USAP Community School", desc: "Accepted into the prestigious USAP Community School — a testament to his academic excellence and all-round potential." },
+  ];
+
+  return (
+    <section id="about" className="py-24 px-6 lg:px-12" style={{ background: "var(--gradient-section)" }}>
+      <div className="container mx-auto max-w-6xl">
+        <div className="flex items-center gap-4 mb-4">
+          <div className="h-px w-12" style={{ background: `hsl(var(--gold))` }} />
+          <span className="text-sm font-medium tracking-[0.3em] uppercase text-gold">My Story</span>
+        </div>
+        <h2 className="font-display text-5xl mb-16">About <span className="italic text-gold">Me</span></h2>
+
+        <div className="grid lg:grid-cols-2 gap-16 mb-20">
+          <div className="space-y-6">
+            <p className="text-lg leading-relaxed" style={{ color: `hsl(var(--muted-foreground))` }}>
+              I'm Emmanuel Chidhobwe — a passionate, determined, and multifaceted student from Zimbabwe. 
+              My academic journey began in Beitbridge at Makombe Primary School, taking me through 
+              Masvingo's Shakashe Primary and Ndarama High School before landing at USAP Community School.
+            </p>
+            <p className="leading-relaxed" style={{ color: `hsl(var(--muted-foreground))` }}>
+                Born the firstborn in a Christian family of four, I carry the values of faith, 
+                responsibility, and service everywhere I go. I thrive both inside and outside the classroom — 
+                on the athletics track, in the robotics lab, writing poetry, or debugging code at midnight.
+              </p>
+              <p className="leading-relaxed" style={{ color: `hsl(var(--muted-foreground))` }}>
+                I speak Chipfumbi — a language close to my heart and one I am passionate about preserving and 
+                getting formally recognized. At the heart of who I am is a simple belief: <em className="text-gold-light not-italic font-medium">every skill you learn 
+                is a door you open for yourself and others.</em>
+              </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { label: "Name", value: "Emmanuel Chidhobwe" },
+              { label: "Nationality", value: "Zimbabwean" },
+              { label: "Current School", value: "USAP Community School" },
+              { label: "Previous School", value: "Ndarama High School" },
+              { label: "Birth Order", value: "Firstborn of 4 siblings" },
+              { label: "Languages", value: "English, Shona, Chipfumbi" },
+              { label: "Passion", value: "Tech, Poetry & Sports" },
+            ].map((item) => (
+              <div key={item.label} className="rounded-xl p-4 border" style={{
+                backgroundColor: `hsl(var(--surface-raised))`,
+                borderColor: `hsl(var(--border))`
+              }}>
+                <div className="text-xs tracking-widest uppercase mb-1 text-gold">{item.label}</div>
+                <div className="text-sm font-medium">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <h3 className="font-display text-3xl mb-12">Life <span className="italic text-gold">Timeline</span></h3>
+        <div className="relative">
+          <div className="absolute left-16 top-0 bottom-0 w-px" style={{ background: `hsl(var(--gold-dim))` }} />
+          <div className="space-y-8">
+            {timeline.map((item, i) => (
+              <div key={i} className="flex gap-8 items-start">
+                <div className="w-32 flex-shrink-0 text-right">
+                  <span className="font-display text-2xl font-bold text-gold">{item.year}</span>
+                </div>
+                <div className="relative flex-shrink-0 mt-2">
+                  <div className="w-3 h-3 rounded-full border-2 border-gold" style={{
+                    backgroundColor: `hsl(var(--gold))`,
+                    boxShadow: `0 0 12px hsl(var(--gold) / 0.5)`
+                  }} />
+                </div>
+                <div className="flex-1 pb-4">
+                  <h4 className="font-display text-xl font-semibold mb-2">{item.title}</h4>
+                  <p className="text-sm leading-relaxed" style={{ color: `hsl(var(--muted-foreground))` }}>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
+
         </div>
 
     <aside id="lovable-badge">
